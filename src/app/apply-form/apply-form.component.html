@@ -1,0 +1,39 @@
+<form [formGroup]="applyForm" (submit)="onSubmit()">
+  <div>
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput type="text" placeholder="Name" formControlName="name" />
+      <mat-error *ngIf="applyForm.controls['name'].hasError('required')">
+        Field is required
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput type="email" placeholder="Name" formControlName="email" />
+      <mat-error *ngIf="applyForm.controls['email'].hasError('email')">
+        Invalid email address
+      </mat-error>
+      <mat-error *ngIf="applyForm.controls['email'].hasError('required')">
+        Email is required
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field>
+      <mat-label>Message</mat-label>
+      <textarea name="message" matInput formControlName="message"></textarea>
+      <mat-error *ngIf="applyForm.controls['message'].hasError('required')">
+        Field is required
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <button mat-raised-button>Submit</button>
+  </div>
+
+</form>
