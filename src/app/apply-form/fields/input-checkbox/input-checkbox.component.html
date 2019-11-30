@@ -1,0 +1,13 @@
+<label>{{ label }}</label>
+<ng-container *ngFor="let checkbox of list; let i = index">
+  <mat-checkbox
+    [checked]="checkbox.checked"
+    (change)="onChange($event, i)"
+  >
+    {{ checkbox.label }}
+  </mat-checkbox>
+</ng-container>
+
+<div *ngIf="group.get(controlName)?.touched && group.get(controlName)?.hasError('required')" class="error">
+  Field is required
+</div>

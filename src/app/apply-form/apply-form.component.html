@@ -33,6 +33,16 @@
   </div>
 
   <div>
+    <app-input-checkbox
+      [group]="applyForm"
+      [controlName]="'checkbox'"
+      [list]="values"
+      [isRequired]="true"
+      label="Skills"
+    ></app-input-checkbox>
+  </div>
+
+  <div>
     <button mat-raised-button>Submit</button>
   </div>
 
