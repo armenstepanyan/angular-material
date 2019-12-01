@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ApplyFormComponent } from './apply-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { MatFormFieldModule, MatInputModule, MatButtonModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatButtonModule, MatRadioModule } from '@angular/material';
 import { InputCheckboxModule } from '@app/apply-form/fields/input-checkbox/input-checkbox.module';
 
 @NgModule({
@@ -14,7 +14,8 @@ import { InputCheckboxModule } from '@app/apply-form/fields/input-checkbox/input
     InputCheckboxModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatRadioModule
   ],
   exports: [ApplyFormComponent]
 })

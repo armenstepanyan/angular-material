@@ -43,6 +43,21 @@
   </div>
 
   <div>
+    <label id="example-radio-group-label">Gender</label>
+    <mat-radio-group
+      aria-labelledby="example-radio-group-label"
+      class="example-radio-group"
+      formControlName="radio"
+    >
+      <mat-radio-button class="example-radio-button" value="Male">Male</mat-radio-button>
+      <mat-radio-button class="example-radio-button" value="Female">Female</mat-radio-button>
+      <mat-error *ngIf="applyForm.touched && applyForm.controls['radio'].hasError('required')">
+        Field is required
+      </mat-error>
+    </mat-radio-group>
+  </div>
+
+  <div>
     <button mat-raised-button>Submit</button>
   </div>
 

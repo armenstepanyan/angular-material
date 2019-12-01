@@ -26,6 +26,7 @@ export class ApplyFormComponent implements OnInit {
       name: [null, [Validators.required]],
       email: [null, [Validators.required, Validators.email]],
       checkbox: [null, [Validators.required]],
+      radio: [null, [Validators.required]],
       message: [null, Validators.required],
     });
   }
