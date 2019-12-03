@@ -20,7 +20,7 @@
         <mat-icon>more_horiz</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item>Copy</button>
+        <button mat-menu-item (click)="copy(element.name)">Copy</button>
         <button mat-menu-item (click)="delete(element.id)">Delete</button>
       </mat-menu>
     </td>

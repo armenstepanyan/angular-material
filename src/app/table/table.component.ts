@@ -1,11 +1,6 @@
 import {Component, OnInit, Input, Output, ViewChild, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { MatSort, MatTableDataSource } from '@angular/material';
-
-
-interface ListItem {
-  id: number;
-  name: string;
-}
+import { ListItem } from '@app/interface/list-item.interface';
 
 @Component({
   selector: 'app-table',
@@ -16,6 +11,8 @@ export class TableComponent implements OnInit, OnChanges {
 
   @Input() list: Array<ListItem>;
   @Output() deleteItem: EventEmitter<number> = new EventEmitter<number>();
+  @Output() copyItem: EventEmitter<ListItem> = new EventEmitter<ListItem>();
+
   displayedColumns: string[] = ['id', 'name', 'action'];
   dataSource;
 
@@ -36,6 +33,12 @@ export class TableComponent implements OnInit, OnChanges {
 
   delete(id: number) {
     this.deleteItem.emit(id);
+  }
+
+  copy(name: string) {
+    const id = +(new Date());
+    name = `${name} Copy`;
+    this.copyItem.emit({ id, name });
   }
 
 }

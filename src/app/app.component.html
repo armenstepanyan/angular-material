@@ -1,7 +1,7 @@
 <app-sidebar></app-sidebar>
 <app-apply-form></app-apply-form>
 
-<app-table [list]="list" (deleteItem)="onDelete($event)"></app-table>
+<app-table [list]="list" (deleteItem)="onDelete($event)" (copyItem)="onCopy($event)"></app-table>
 
 
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ListItem } from '@app/interface/list-item.interface';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,9 @@ export class AppComponent {
 
   onDelete(id: number) {
     this.list = this.list.filter(item => item.id !== id);
-    console.log(this.list);
+  }
+
+  onCopy(item: ListItem) {
+    this.list = [...this.list, item];
   }
 }
