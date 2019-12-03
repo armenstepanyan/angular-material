@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { SidebarModule } from './sidebar/sidebar.module';
 import { ApplyFormModule } from './apply-form/apply-form.module';
+import { TableModule } from './table/table.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ApplyFormModule } from './apply-form/apply-form.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     SidebarModule,
-    ApplyFormModule
+    ApplyFormModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
