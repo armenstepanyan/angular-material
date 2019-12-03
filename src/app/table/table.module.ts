@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TableComponent } from './table.component';
-import { MatSortModule, MatTableModule, MatIconModule, MatMenuModule } from '@angular/material';
+import { MatSortModule, MatTableModule, MatIconModule, MatMenuModule, MatPaginatorModule } from '@angular/material';
 
 
 
@@ -12,7 +12,8 @@ import { MatSortModule, MatTableModule, MatIconModule, MatMenuModule } from '@an
     MatSortModule,
     MatTableModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    MatPaginatorModule
   ],
   exports: [TableComponent]
 })

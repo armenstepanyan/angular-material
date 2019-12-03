@@ -1,5 +1,5 @@
 import {Component, OnInit, Input, Output, ViewChild, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
-import { MatSort, MatTableDataSource } from '@angular/material';
+import { MatSort, MatTableDataSource, MatPaginator } from '@angular/material';
 import { ListItem } from '@app/interface/list-item.interface';
 
 @Component({
@@ -16,19 +16,25 @@ export class TableComponent implements OnInit, OnChanges {
   displayedColumns: string[] = ['id', 'name', 'action'];
   dataSource;
 
-  @ViewChild(MatSort, {static: true}) sort: MatSort;
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+
   constructor() { }
 
   ngOnInit() {
-    this.dataSource = new MatTableDataSource(this.list);
-    this.dataSource.sort = this.sort;
+    this.initTable();
   }
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes.list) {
-      this.dataSource = new MatTableDataSource(this.list);
-      this.dataSource.sort = this.sort;
+      this.initTable();
     }
+  }
+
+  initTable() {
+    this.dataSource = new MatTableDataSource(this.list);
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
   }
 
   delete(id: number) {
