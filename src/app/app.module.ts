@@ -9,6 +9,9 @@ import { SidebarModule } from './sidebar/sidebar.module';
 import { ApplyFormModule } from './apply-form/apply-form.module';
 import { TableModule } from './table/table.module';
 
+import { MatTabsModule } from '@angular/material';
+
+
 @NgModule({
   declarations: [
     AppComponent
@@ -19,7 +22,8 @@ import { TableModule } from './table/table.module';
     BrowserAnimationsModule,
     SidebarModule,
     ApplyFormModule,
-    TableModule
+    TableModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

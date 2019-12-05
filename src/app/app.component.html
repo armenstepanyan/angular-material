@@ -1,7 +1,12 @@
-<app-sidebar></app-sidebar>
-<app-apply-form></app-apply-form>
-
-<app-table [list]="list" (deleteItem)="onDelete($event)" (copyItem)="onCopy($event)"></app-table>
-
-
+<mat-tab-group>
+  <mat-tab label="First">
+    <app-sidebar></app-sidebar>
+  </mat-tab>
+  <mat-tab label="Second">
+    <app-apply-form></app-apply-form>
+  </mat-tab>
+  <mat-tab label="Third">
+    <app-table [list]="list" (deleteItem)="onDelete($event)" (copyItem)="onCopy($event)"></app-table>
+  </mat-tab>
+</mat-tab-group>
 
