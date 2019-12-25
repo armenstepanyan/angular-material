@@ -32,3 +32,36 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Create module/component
 ` ng g m sidebar`
 ` ng g c sidebar`
+
+## Generate module with routing
+`ng g m dashboard --rounting ` 
+
+## Add routing in app-routing.module
+```
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'page',
+    pathMatch: 'full',
+  },
+  {
+    path: 'page',
+    loadChildren: () => import('./page/page.module').then(m => m.PageModule),
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),
+  },
+]
+```
+
+## Add routing in module
+```
+const routes: Routes = [
+  {
+    path: '',
+    component: PageComponent,
+  }
+];
+```
+
