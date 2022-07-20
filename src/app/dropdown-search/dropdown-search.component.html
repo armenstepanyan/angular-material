@@ -1,0 +1,29 @@
+<mat-form-field [floatLabel]="'never'">
+  <mat-select
+    [placeholder]="placeholder"
+    [ngModel]="group.get(controlName).value"
+    (ngModelChange)="selectItem($event)"
+    [ngModelOptions]="{ standalone: true }"
+  >
+    <div style="padding: 3px 4px">
+      <mat-form-field style="width: 100%" floatLabel="never">
+        <input
+          matInput
+          placeholder="Search"
+          autocomplete="off"
+          #searchInput
+          (keydown)="preventMatSelectScroll($event)"
+          (blur)="resetFilter(searchInput)"
+        />
+        <button mat-button *ngIf="searchInput.value" matSuffix mat-icon-button aria-label="Clear" (click)="searchInput.value = ''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+    <mat-option value="">Not Selected</mat-option>
+    <mat-option [value]="item.id" *ngFor="let item of list | filterSearch: searchInput.value:optionLabel">
+      {{ item[optionLabel] }}
+    </mat-option>
+  </mat-select>
+  <mat-hint>{{ label }}</mat-hint>
+</mat-form-field>

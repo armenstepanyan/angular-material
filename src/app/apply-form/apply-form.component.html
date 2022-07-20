@@ -56,6 +56,17 @@
       </mat-error>
     </mat-radio-group>
   </div>
+  <div>
+    <app-dropdown-search
+      placeholder="Enter value to search"
+      label="Select from list"
+      [group]="applyForm"
+      controlName="search"
+      [list]="searchList"
+      *ngIf="applyForm.get('search')"
+      (itemSelected)="dropdownItemChanged($event)"
+    ></app-dropdown-search>
+  </div>
 
   <div>
     <button mat-raised-button>Submit</button>

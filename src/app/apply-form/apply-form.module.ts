@@ -5,6 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { MatFormFieldModule, MatInputModule, MatButtonModule, MatRadioModule } from '@angular/material';
 import { InputCheckboxModule } from '@app/apply-form/fields/input-checkbox/input-checkbox.module';
+import { DropdownSearchModule } from '@app/dropdown-search/dropdown-search.module';
 
 @NgModule({
   declarations: [ApplyFormComponent],
@@ -15,7 +16,8 @@ import { InputCheckboxModule } from '@app/apply-form/fields/input-checkbox/input
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatRadioModule
+    MatRadioModule,
+    DropdownSearchModule
   ],
   exports: [ApplyFormComponent]
 })
